@@ -112,12 +112,78 @@ public class Strings {
 	}
 	
 	//ejercicio6
+	
+	
+	public static int appears(String cadena, char letra) {
+		int occurrences = 0;
+		for (int index = 0; index < cadena.length(); index++) {
+			if (cadena.charAt(index) == letra) {
+				occurrences++;
+			}
+		}
+		return occurrences;
+	}
+	
+	//ejercicio7 (falla)
 	//A -> a = 32 entre ambos.
 	
-	public static void areMostlyEqualTwo(String cadena1, String cadena2) {
-		for (int index = 0; index < cadena1.length(); index++) {
+	public static boolean areMostlyEqualTwo(String cadena1, String cadena2) {
+		boolean areEqual = true;
+		char car;
+		String cadena1Min = "", cadena2Min = "";
+		
+		if (cadena1.length() != cadena2.length()) {
+			areEqual = false;
+		} else {
+			for (int index = 0; index < cadena1.length(); index++) {
+					if (cadena1.charAt(index) >= 'A' && cadena1.charAt(index) <='Z') {
+						car = (char) (cadena1.charAt(index) + 32);
+					} else {
+						car = cadena1.charAt(index);
+					}
+				cadena1Min = cadena1Min + car;
+					if (cadena2.charAt(index) >= 'A' && cadena2.charAt(index) <='Z') {
+						car = (char) (cadena2.charAt(index) + 32);
+					} else {
+						car = cadena2.charAt(index);
+					}
+				cadena2Min = cadena2Min + car;
+			}
 			
+			for (int index = 0; index < cadena1Min.length(); index++) {
+				if (cadena1Min.charAt(index) != cadena2Min.charAt(index)) {
+					areEqual = false;
+				}
+			}
 		}
+		return areEqual;
+	}
+	
+	//ejercicio8
+	
+	public static String timesInAnArray(String cadena) {
+		int[] abecdario = new int[26];
+		String resultado = "Minusculas: \n";
+		char letra = 0;
+		
+		for (int index = 0; index < cadena.length(); index++) {
+			abecdario[cadena.charAt(index) - 97]++;
+		}
+		
+		for (int index = 0; index < abecdario.length; index++) {
+			letra = (char) (index + 97);
+			resultado = resultado + letra + ": " + abecdario[index] + "\t";
+		}
+		
+		return resultado;
+	}
+	
+	//ejercicio9
+	
+	public static void UpperFirstLetter(String cadena) {
+		
+		
+		
 	}
 	
 }
