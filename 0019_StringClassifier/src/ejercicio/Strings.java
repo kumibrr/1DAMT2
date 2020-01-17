@@ -161,18 +161,25 @@ public class Strings {
 	
 	//ejercicio8
 	
-	public static String timesInAnArray(String cadena) {
-		int[] abecdario = new int[26];
-		String resultado = "Minusculas: \n";
-		char letra = 0;
-		
+	public static int[] timesInAnArray(String cadena) {
+		int[] abecdario = new int[255];
+
 		for (int index = 0; index < cadena.length(); index++) {
-			abecdario[cadena.charAt(index) - 97]++;
+			abecdario[cadena.charAt(index)]++;
 		}
 		
-		for (int index = 0; index < abecdario.length; index++) {
-			letra = (char) (index + 97);
-			resultado = resultado + letra + ": " + abecdario[index] + "\t";
+		return abecdario;
+	}
+	
+	public static String timesInAnArrayToString(int[] abcedario) {
+		char letra = 0;
+		String resultado = "Minusculas: \n";
+		
+		for (int index = 0; index < abcedario.length; index++) {
+			letra = (char) (index);
+			if (abcedario[index] > 0) {
+				resultado = resultado + letra + ": " + abcedario[index] + "\n";
+			}
 		}
 		
 		return resultado;
@@ -180,10 +187,21 @@ public class Strings {
 	
 	//ejercicio9
 	
-	public static void UpperFirstLetter(String cadena) {
-		
-		
-		
+	public static String UpperFirstLetter(String cadena) {
+		String result = "";
+		char character = 0;
+		for (int index = 0; index < cadena.length(); index++) {
+			
+			if (index == 0) {
+				character = (char) (cadena.charAt(index) - 32);
+			} else if (cadena.charAt(index) == ' ') {
+				character = (char) (cadena.charAt(index) - 32);
+			} else {
+				character = cadena.charAt(index);
+			}
+			result = result + character;
+		}
+		return result;
 	}
 	
 }
