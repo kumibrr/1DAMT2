@@ -14,4 +14,5 @@ public class Circulo extends Punto {
 		centro = this.centro;
 		radio = this.radio;
 	}
+	
 }

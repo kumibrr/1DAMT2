@@ -80,12 +80,7 @@ public class Punto {
 	}
 	
 	public boolean equals(Object obj) {
-		boolean result = false;
-		Punto punto = (Punto) obj;
-		if (punto.detectCuadrante() == this.detectCuadrante()) {
-			result = true;
-		}
-		return result;
+		return detectCuadrante() == ((Punto)obj).detectCuadrante();
 	}
 	
 }
