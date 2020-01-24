@@ -12,4 +12,8 @@ public class Profesor extends Personal {
 		this.departamento = departamento;
 		this.numeroDespacho = numeroDespacho;
 	}
+	
+	public Departamento getDepartamento() {
+		return departamento;
+	}
 }
