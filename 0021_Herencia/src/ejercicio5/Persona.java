@@ -27,5 +27,9 @@ public abstract class Persona {
 		this.dni = dni;
 		this.estadoCivil = estadoCivil;
 	}
+	
+	public void getDNI() {
+		
+	}
 }
 

@@ -16,4 +16,6 @@ public class Profesor extends Personal {
 	public Departamento getDepartamento() {
 		return departamento;
 	}
+	
+	
 }
