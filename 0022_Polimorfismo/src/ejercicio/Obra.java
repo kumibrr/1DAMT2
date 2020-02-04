@@ -6,11 +6,13 @@ public abstract class Obra {
 	private String title;
 	private String storageID;
 	private Date year;
+	private Artist artist;
 	
-	Obra(String title, String storageID, Date year){
+	Obra(String title, String storageID, Date year,Artist artist){
 		this.title = title;
 		this.storageID = storageID;
 		this.year = year;
+		this.artist = artist;
 	}
 	
 	public String getTitle() {
@@ -33,6 +35,9 @@ public abstract class Obra {
 	}
 	
 	public boolean equals(Object obj) {
+		boolean areEqual = false;
+		Obra obra = (Obra) obj;
+		if (this.artist == artist);
 		
 		return false;
 	}
