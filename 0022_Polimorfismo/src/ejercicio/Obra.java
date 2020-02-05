@@ -33,12 +33,12 @@ public abstract class Obra {
 	public void setYear(Date year) {
 		this.year = year;
 	}
-	
+
+	@Override
 	public boolean equals(Object obj) {
-		boolean areEqual = false;
-		Obra obra = (Obra) obj;
-		if (this.artist == artist);
-		
-		return false;
+		// TODO Auto-generated method stub
+		return super.equals(obj);
 	}
+	
+	
 }
