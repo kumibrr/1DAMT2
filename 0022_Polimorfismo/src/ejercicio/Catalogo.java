@@ -64,5 +64,34 @@ public class Catalogo extends ArrayList<Obra> {
 		return result;
 	}
 	
+	public boolean removeObrav2(String storageID) {
+		Obra obra = new Obra(storageID);
+		return this.remove(obra);
+	}
+	
+	public Object buscarObra(String storageID) {
+		boolean found = false;
+		Obra result = null;
+				
+		while (!found) {
+		for(int i = 0; i < this.size(); i++) {
+			if (this.get(i).getStorageID() == storageID) {
+				result = this.get(i);
+				found = true;
+			}
+		}
+		}
+		
+		
+		return result;
+	}
+	
+	public Object buscarObrav2(String storageID) {
+		Obra obra = null;
+		obra = this.get(this.indexOf(new Obra(storageID)));
+		
+		return obra;
+	}
+	
 	
 }

@@ -2,7 +2,7 @@ package ejercicio;
 
 import java.util.Date;
 
-public abstract class Obra {
+public class Obra {
 	private String title;
 	private String storageID;
 	private Date year;
@@ -13,6 +13,15 @@ public abstract class Obra {
 		this.storageID = storageID;
 		this.year = year;
 		this.artist = artist;
+	}
+	Obra(String storageID){
+		this.storageID = storageID;
+	}
+	Obra(){
+		this.title = null;
+		this.artist = null;
+		this.storageID = null;
+		this.year = null;
 	}
 	
 	public String getTitle() {
