@@ -93,5 +93,24 @@ public class Catalogo extends ArrayList<Obra> {
 		return obra;
 	}
 	
+	public float superficie() {
+		float superficie = 0f;
+		for(Obra obra: this) {
+			if (obra instanceof Pintura) {
+				superficie += ((Pintura) obra).getSuperficie();
+			}
+		}
+		return superficie;
+	}
+	
+	public String masAlta() {
+		String storageID;
+		for (Obra obra: this) {
+			
+		}
+		
+		return "";
+	}
+	
 	
 }

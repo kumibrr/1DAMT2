@@ -21,6 +21,8 @@ public class Pintura extends Obra {
 		return "Pintura [dimensionX=" + dimensionX + ", dimensionY=" + dimensionY + ", soporte=" + soporte + "]";
 	}
 	
-	
+	public float getSuperficie() {
+		return dimensionX * dimensionY;
+	}
 
 }

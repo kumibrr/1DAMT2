@@ -13,5 +13,9 @@ public class Escultura extends Obra {
 		this.altura = altura;
 		// TODO Auto-generated constructor stub
 	}
+	
+	public float getAltura() {
+		return this.altura;
+	}
 
 }
