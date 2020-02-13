@@ -23,6 +23,13 @@ public class Vivienda extends Construcciones {
 		this.piso = piso;
 	}
 	
+	public String toString() {
+		String result="Vivienda[";
+		result += this.getUbicacion() + ". " + this.getSqrMetros() + ". " + this.getPrecio() + ". " + this.getTipoConstruccion() + ". " + this.numHabitaciones + ". " + this.piso + "]\n";
+		
+		return result;
+	}
+	
 	
 	
 }

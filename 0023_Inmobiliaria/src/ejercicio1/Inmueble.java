@@ -30,4 +30,13 @@ public abstract class Inmueble {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
+	public boolean equals(Inmueble inmueble) {
+		boolean result = false;
+		if (this.getClass().getSimpleName() == inmueble.getClass().getSimpleName() && this.getUbicacion() == inmueble.getUbicacion() &&
+			this.getPrecio() == inmueble.getPrecio() &&	this.getSqrMetros() == inmueble.getSqrMetros()) {
+			result = true;
+		}
+		
+		return result;
+	}
 }

@@ -12,5 +12,14 @@ public class LocalComercial extends Construcciones {
 		super.setPrecio(super.getPrecio() * super.getSqrMetros());
 	}
 	
+	
+	public String toString() {
+		String result = "LocalComercial[";
+		
+		result += this.getUbicacion() + ". " + this.getSqrMetros() + ". " + this.getPrecio() + ". " + this.getTipoConstruccion() + "]\n";
+		
+		return result;
+	}
+	
 
 }

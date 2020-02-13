@@ -14,4 +14,11 @@ public class Garaje extends Superficie {
 		this.claseGaraje = claseGaraje;
 	}
 
+	public String toString() {
+		String result = "Garaje[";
+		
+		result += this.getUbicacion() + ". " + this.getSqrMetros() + ". " + this.getPrecio() + ". " + this.getClaseGaraje() + "]\n";
+		
+		return result;
+	}
 }
