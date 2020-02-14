@@ -26,27 +26,55 @@ siempre que no estuviera ya antes en venta.
 
 	@Override
 	public ArrayList<Inmueble> inmueblesVenta(Float precio) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Inmueble> resultado = new ArrayList<Inmueble>();
+		
+		for (int i = 0; i < catalogo.size(); i++) {
+			if (catalogo.get(i).getPrecio() <= precio) {
+				resultado.add(catalogo.get(i));
+			}
+		}
+		
+		return resultado;
 	}
 
 	@Override
 	public ArrayList<Inmueble> SegundaMano(Float superficie) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Inmueble> resultado = new ArrayList<Inmueble>();
+		
+		for (int i = 0; i < catalogo.size(); i++) {
+			if (catalogo.get(i).getClass().getSimpleName() == "LocalComercial" && catalogo.get(i).getSqrMetros() > superficie) {
+				resultado.add(catalogo.get(i));
+			}
+		}
+		
+		return resultado;
 	}
 
 	@Override
 	public int solaresRusticos() {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		
+		for (int i = 0; i < catalogo.size(); i++) {
+			if (catalogo.get(i).getClass().getSimpleName() == "Solar" && ((Solar) catalogo.get(i)).getZonaSolar() != ZonaSolar.URBANA) {
+				result++;
+			}
+		}
+		return result;
 	}
 
 	@Override
-	public IAgencia funsion(IAgencia agencia) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Inmueble> funsion(ArrayList<Inmueble> agencia) {
+		ArrayList<Inmueble> resultado = new ArrayList<Inmueble>();
+		
+		for (int i = 0; i < agencia.size(); i++) {
+			resultado.add(agencia.get(i));
+		}
+		for (int i = 0; i < catalogo.size(); i++) {
+			resultado.add(catalogo.get(i));
+		}
+		return resultado;
 	}
+	
 	
 	public boolean equals(Inmueble inmueble) {
 		boolean result = false;
@@ -68,5 +96,7 @@ siempre que no estuviera ya antes en venta.
 		return result;
 		
 	}
+
+	
 
 }

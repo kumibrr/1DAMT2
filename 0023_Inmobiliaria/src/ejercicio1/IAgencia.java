@@ -8,6 +8,6 @@ public interface IAgencia {
 	public ArrayList<Inmueble> inmueblesVenta(Float precio);
 	public ArrayList<Inmueble> SegundaMano(Float superficie);
 	public int solaresRusticos();
-	public IAgencia funsion(IAgencia agencia);
+	public ArrayList<Inmueble> funsion(ArrayList<Inmueble> agencia);
 	
 }
