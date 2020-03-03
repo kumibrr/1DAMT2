@@ -11,6 +11,7 @@ public class TestRecursividad {
 		arraylista.add(new String("hola1"));
 		arraylista.add(new String("hola2"));
 		arraylista.add(new String("hola3"));
+		System.out.println(Recursividad.buscarSustituirArray(arraylista, "hola3", "Que tal"));
 		Recursividad.arrayListCorrida(arraylista);
 		
 	}
