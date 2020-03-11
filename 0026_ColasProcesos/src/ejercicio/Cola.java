@@ -1,10 +1,11 @@
 package ejercicio;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Cola {
 	
-	private LinkedList<Proceso> cola;
+	private List<Proceso> cola;
 	
 	//El constructor se debe acceder mediante otro metodo cuando sean datos delicados.
 	private Cola() {
@@ -12,22 +13,37 @@ public class Cola {
 	}
 	
 	public void inscola(Proceso p) {
-		
+		cola.add(p);
 	}
 	
 	public Proceso desenCola() {
-		return null;
+		Proceso tmp = null;
+		if (cola.size() > 0) {
+			cola.get(0);
+			cola.remove(0);
+		}
+		return tmp;
 	}
 	
 	public boolean esVaciaCola() {
-		return false;
+		boolean result = false;
+		if (cola.size() == 0) {
+			result = true;
+		}
+		return result;
 	}
 	
 	public String toString() {
-		return "";
+		String result="Cola{\n";
+		
+		for(int i = 0; i < cola.size(); i++) {
+			result += cola.get(i).toString();
+		}
+		result += "}"; 
+		return result;
 	}
 	
-	public LinkedList<Proceso> creaCola() {
-		return new LinkedList<Proceso>();
+	public static Cola creaCola() {
+		return new Cola();
 	}
 }

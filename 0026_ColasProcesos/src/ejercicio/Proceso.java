@@ -9,11 +9,12 @@ public class Proceso {
 	
 	public Proceso(int id, int prioridad){
 		this.id = id;
-		this.tiempo = new Random().nextInt(1800) + 200;
+		this.tiempo = new Random().nextInt(1700) + 300;
 		if(prioridad >=1 && prioridad <= 3) {
 			this.prioridad = prioridad;
 		}
 	}
+	
 	
 	public String toString() {
 		return id + "[Prioridad: " + prioridad + ".\t Tiempo: " + tiempo + "]\n";
