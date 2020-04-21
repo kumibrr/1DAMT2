@@ -25,4 +25,13 @@ public abstract class Cliente {
 		return " DNI=" + this.dni + " Nombre= " + this.name;
 	}
 	
+	public boolean equals(Object obj) {
+		Cliente cliente = (Cliente) obj;
+		boolean response = false;
+		if(this.name == cliente.name && this.dni == cliente.dni) {
+			response = true;
+		}
+		return response;
+	}
+	
 }
