@@ -1,7 +1,6 @@
 package project;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class UI {
@@ -25,7 +24,7 @@ public class UI {
 			impresora.imprimir();
 			System.out.println(impresora.toString());
 		} else if(option == 2) {
-			int menuHistorialResult = menuHistorial();
+			menuHistorial();
 		} else if(option == 3){
 			input.close();
 			exit = true;
@@ -33,7 +32,7 @@ public class UI {
 		return exit;
 	}
 	
-	public int menuHistorial() {
+	public void menuHistorial() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n-------HISTORIALES--------");
 		System.out.println("1.Buscar por DNI\t2.Todos los usuarios y trabajos ordenados por DNI");
 		System.out.println("3.Todos los usuarios y trabajos ordenados por nombre\t4.Volver al menu principal");
@@ -49,17 +48,18 @@ public class UI {
 				System.out.println("No se ha encontrado un resultado válido");
 			}
 		} else if(option == 2) {
-			HashMap<String, ArrayList<Documento>> response = null;
-			response = impresora.getHistorialSortByNombre();
+			String response = null;
+			response = impresora.getHistorialSortByDni();
 			System.out.println(response.toString());
 			
 		} else if(option == 3) {
-			
+			String response = null;
+			response = impresora.getHistorialSortByNombre();
+			System.out.println(response);
 		} else if(option == 4) {
 			
+		} else {
+			System.out.println("Opción erronea. br0 apunta bien");
 		}
-		
-		return 1;
-		
 	}
 }

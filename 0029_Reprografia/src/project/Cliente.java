@@ -1,6 +1,6 @@
 package project;
 
-public abstract class Cliente {
+public abstract class Cliente implements Comparable<Cliente> {
 	private String name;
 	private String dni;
 	
@@ -33,5 +33,13 @@ public abstract class Cliente {
 		}
 		return response;
 	}
+
+	@Override
+	public int compareTo(Cliente o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
 	
 }

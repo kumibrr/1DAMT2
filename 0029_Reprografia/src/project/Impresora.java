@@ -72,19 +72,45 @@ public class Impresora {
 		return response;
 	}
 	
-	public HashMap<String, ArrayList<Documento> > getHistorialSortByNombre(){
-		HashMap<String, ArrayList<Documento>> response = new HashMap<String, ArrayList<Documento>>();
+	public String getHistorialSortByDni(){
+		String response = "";
 		
 		Set<String> keys = historial.keySet();
 		ArrayList<String> arrayList = new ArrayList<String>();
 		for (String key : keys) {
 			arrayList.add(key.toString());
-			
 		}
+		
 		Collections.sort(arrayList, new OrdenarClienteAlfabeticamente());
 		
 		for (int i = 0; i < arrayList.size(); i++) {
-			response.put(arrayList.get(i), historial.get(arrayList.get(i)));
+			response += arrayList.get(i) + ": " + historial.get(arrayList.get(i)) + "\n";
+		}
+		
+		return response;
+	}
+	
+	public String getHistorialSortByNombre(){
+		String response = "";
+		Set<String> keys = historial.keySet();
+		ArrayList<String> nameList = new ArrayList<String>();
+		ArrayList<Cliente> customerList = new ArrayList<Cliente>();
+		
+		int index = 0;
+		for (String key : keys) {
+			customerList.add(historial.get(key).get(0).getCliente());
+			nameList.add(customerList.get(index).getName());
+			index++;
+		}
+		
+		Collections.sort(nameList, new OrdenarClienteAlfabeticamente());
+		
+		for (int i = 0; i < nameList.size(); i++) {
+			for (int j = 0; j < nameList.size(); j++) {
+				if (customerList.get(i).getName() == nameList.get(j)) {
+					response += nameList.get(j) + ": " + historial.get(customerList.get(j).getDni()) + "\n";
+				}
+			}
 		}
 		
 		return response;
